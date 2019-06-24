@@ -11,31 +11,31 @@ mybatis:
 spring:
   profiles: dev
   application:
-    name: springcloud-dept  # Ó¦ÓÃµÄÃû³Æ   ¶àÊµÀı Ãû³Æ±ØĞë±£³ÖÒ»ÖÂ
+    name: springcloud-dept  # åº”ç”¨çš„åç§°   å¤šå®ä¾‹ åç§°å¿…é¡»ä¿æŒä¸€è‡´
   datasource:
-    type: com.alibaba.druid.pool.DruidDataSource            # µ±Ç°Êı¾İÔ´²Ù×÷ÀàĞÍ
-    driver-class-name: com.mysql.jdbc.Driver              # mysqlÇı¶¯°ü
-    url: jdbc:mysql://localhost:3306/bj1901          # Êı¾İ¿âÃû³Æ
+    type: com.alibaba.druid.pool.DruidDataSource            # å½“å‰æ•°æ®æºæ“ä½œç±»å‹
+    driver-class-name: com.mysql.jdbc.Driver              # mysqlé©±åŠ¨åŒ…
+    url: jdbc:mysql://localhost:3306/bj1901          # æ•°æ®åº“åç§°
     username: root
     password: root
       
-# ÅäÖÃ·şÎñ×¢²áĞÅÏ¢      
+# é…ç½®æœåŠ¡æ³¨å†Œä¿¡æ¯      
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:7004/eureka # eureka·şÎñÆ÷µÄµØÖ·   µ¥»ú°æ
-      #defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka #¼¯Èº°æ
+      defaultZone: http://localhost:7004/eureka # eurekaæœåŠ¡å™¨çš„åœ°å€   å•æœºç‰ˆ
+      #defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka #é›†ç¾¤ç‰ˆ
   instance: 
-    instance-id: springcloud-dept:8001  #ÉèÖÃ·ÃÎÊµÄ±ğÃû
-    prefer-ip-address: true        #ÏÔÊ¾ipµØÖ·
-info:                              #µã»÷±ğÃû  ·ÃÎÊinfoĞÅÏ¢
+    instance-id: springcloud-dept:8001  #è®¾ç½®è®¿é—®çš„åˆ«å
+    prefer-ip-address: true        #æ˜¾ç¤ºipåœ°å€
+info:                              #ç‚¹å‡»åˆ«å  è®¿é—®infoä¿¡æ¯
   app.name: springcloud-dept
   company.name: www.hzitxx.com
   build.artifactId: $project.artifactId$
   build.version: $project.version$
 ---
 server:
-  port: 8001
+  port: 8005
 mybatis:
   type-aliases-package: com.hzit.api.entity
   
@@ -43,24 +43,24 @@ mybatis:
 spring:
   profiles: test
   application:
-    name: springcloud-dept  # Ó¦ÓÃµÄÃû³Æ   ¶àÊµÀı Ãû³Æ±ØĞë±£³ÖÒ»ÖÂ
+    name: springcloud-dept  # åº”ç”¨çš„åç§°   å¤šå®ä¾‹ åç§°å¿…é¡»ä¿æŒä¸€è‡´
   datasource:
-    type: com.alibaba.druid.pool.DruidDataSource            # µ±Ç°Êı¾İÔ´²Ù×÷ÀàĞÍ
-    driver-class-name: com.mysql.jdbc.Driver              # mysqlÇı¶¯°ü
-    url: jdbc:mysql://localhost:3306/bj1901_2     # Êı¾İ¿âÃû³Æ
+    type: com.alibaba.druid.pool.DruidDataSource            # å½“å‰æ•°æ®æºæ“ä½œç±»å‹
+    driver-class-name: com.mysql.jdbc.Driver              # mysqlé©±åŠ¨åŒ…
+    url: jdbc:mysql://localhost:3306/bj1901_2     # æ•°æ®åº“åç§°
     username: root
     password: root
       
-# ÅäÖÃ·şÎñ×¢²áĞÅÏ¢      
+# é…ç½®æœåŠ¡æ³¨å†Œä¿¡æ¯      
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:7005/eureka # eureka·şÎñÆ÷µÄµØÖ·   µ¥»ú°æ
-      #defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka #¼¯Èº°æ
+      defaultZone: http://localhost:7005/eureka # eurekaæœåŠ¡å™¨çš„åœ°å€   å•æœºç‰ˆ
+      #defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka #é›†ç¾¤ç‰ˆ
   instance: 
-    instance-id: springcloud-dept:8001  #ÉèÖÃ·ÃÎÊµÄ±ğÃû
-    prefer-ip-address: true        #ÏÔÊ¾ipµØÖ·
-info:                              #µã»÷±ğÃû  ·ÃÎÊinfoĞÅÏ¢
+    instance-id: springcloud-dept:8001  #è®¾ç½®è®¿é—®çš„åˆ«å
+    prefer-ip-address: true        #æ˜¾ç¤ºipåœ°å€
+info:                              #ç‚¹å‡»åˆ«å  è®¿é—®infoä¿¡æ¯
   app.name: springcloud-dept
   company.name: www.hzitxx.com
   build.artifactId: $project.artifactId$
